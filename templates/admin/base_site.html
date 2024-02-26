@@ -1,0 +1,14 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-grid.min.css' %}">
+
+<img src="{% static 'blogapp/images/version/market-logo.png'%}" alt="">
+<marquee ><h1 id="site-name"><a href="{% url 'admin:index' %}"> Dr. Zilaba's Website Admin Pannel</a></h1>
+</marquee>
+    {% endblock %}
+
+{% block nav-global %}{% endblock %}

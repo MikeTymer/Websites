@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<section data-bs-version="5.1" class="features4 cid-tMlEXTHLbS" id="features04-w" style="padding-top: 10%;">
+    <div id="wrapper">
+        <div class="container-fluid m-12">
+            <div class="page-title db">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-8 col-xs-4">
+                            <h2>Contact <small class="hidden-xs-down hidden-sm-down">Get in touch with us now and get all your issues solved by DR zameel </small></h2>
+                        </div><!-- end col -->
+                        <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                                <li class="breadcrumb-item active">Contact</li>
+                            </ol>
+                        </div><!-- end col -->                    
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </div><!-- end page-title -->
+
+            <section class="container lb">
+                <div class="container-fluid">
+                    <div class="row ">
+                        <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                            <div class="sidebar">
+                                
+                                <div id="" class="widget">
+                                    <div class="banner-spot clearfix">
+                                        <div class="banner-img">
+                                            <img src="{% static 'images/baba.png' %}" alt="" class="img-fluid">
+                                        </div><!-- end banner-img -->
+                                    </div><!-- end banner -->
+                                </div><!-- end widget -->
+                            </div><!-- end sidebar -->
+                        </div><!-- end col -->
+                        
+                        <div class="col-lg-7 col-md-8 col-sm-8 col-xs-12">
+                            <div class="page-wrapper">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <h4>Who we are</h4>
+                                        <p class="mbr-text mbr-fonts-style display-7 text-black">
+                                            Meet Dr. Zilaba, a renowned African traditional healer and witch doctor, possessing the sacred spiritual 
+                                            powers passed down through generations from the Digo land in coastal Kenya.</p>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <h4>How we help?</h4>
+                                        <p class="mbr-text mbr-fonts-style display-7 text-black">If you’d like to write for us, <a href="#">advertise with us</a> or just say hello, fill out the form below and we’ll get back to you as soon as possible.</p>
+                                    </div>
+                                    <hr class="invis">
+                                    <div class="row justify-content-left item features-without-image mt-0 mb-5 animate__animated animate__delay-1s animate__fadeIn">
+                                        <div class="col-12 col-md-12 col-lg-3">
+                                          <h5 class="mbr-card-title mbr-fonts-style mt-0 mb-3 display-7">
+                                            <strong>Contact</strong>
+                                          </h5>
+                                        </div>
+                                        <div class="col-md-12 col-lg-8 item-wrapper">
+                                            <p class="mbr-text mbr-fonts-style display-7 text-black">
+                                            Connect with us on <a href="http://mobiri.se" class="text-primary">WhatsApp</a> and <a href="http://mobiri.se" class="text-primary">Facebook</a>
+                                            <br>+254110575798 <br>contact@yourbusiness.com <br>Plot24 Buganda Street, Kampala, Uganda<a href="http://mobiri.se" class="text-primary"><br></a>
+                                          </p>
+                                        </div>
+                                    </div>
+                                </div><!-- end row -->
+
+                                <hr class="invis">
+
+                                <div class="row text-black">
+                                    <div class="col-lg-12">
+                                        <form method="post" >
+                                            {% csrf_token %}
+                                            {{ form.media }}
+                                            {{form.as_p}}
+                                            <button type="submit" class="btn btn-success">Submit </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div><!-- end page-wrapper -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </div><!-- end container -->
+            </section>
+
+
+        </div> 
+    </div><!-- end wrapper -->
+
+</section>
+<!-- this is the script to pass the use id and email to the contacts-->
+
+<script>
+    var name = "{{ user.id }}"
+    document.getElementById("author").value = name;
+</script>
+
+
+
+
+{% endblock %}

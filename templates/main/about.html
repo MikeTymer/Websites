@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock title %}
+
+{% block content %}
+
+<div id="wrapper" style="padding-top: 10%;">
+   <div class="container-fluid">
+	<div class="container">
+		<div class="page-title db">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+						<h2> About Us <small class="hidden-xs-down hidden-sm-down">Our services, address and social media </small></h2>
+					</div><!-- end col -->
+					<div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="/">Home</a></li>
+							<li class="breadcrumb-item"><a href="#">about_us</a></li>
+							<li class="breadcrumb-item active">About</li>
+						</ol>
+					</div><!-- end col -->                    
+				</div><!-- end row -->
+			</div><!-- end container -->
+		</div><!-- end page-title -->
+	
+
+    <section class="container lb">
+        <div class="container">
+            <div class="row">
+               
+                    <div class="page-wrapper">
+
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-12 col-lg-7 image-wrapper">
+                                <img class="w-100 animate__animated animate__delay-1s animate__fadeIn" src="{% static 'images/baba.png' %}" alt="">
+                            </div>
+                            <div class="col-12 col-lg col-md-12">
+                                <div class="text-wrapper align-left">
+                                    <h1 class="mbr-section-title mbr-fonts-style mb-4 display-2 animate__animated animate__delay-1s animate__fadeIn"><strong>About us</strong></h1>
+                                    <p class="mbr-text text-black mbr-fonts-style mb-4 display-7 animate__animated animate__delay-1s animate__fadeIn">
+										Dr. Zilaba is the most trusted Traditional Herbalist and Spiritual healer, who has worked for over 13 years plus of experience helping people from 
+										all walks of life lead a fullfilling life. The healing secrets have been in his family for centuries going back to his Great Grandfather who was 
+										one of the most trusted and respected herbalist and spiritual healer in Africa. Dr. Zilabais interested in meeting you at any given time to hear 
+										about your troubles and assist you solve it call: <strong class="text-black">+254 110575798</strong>    
+										<div class="mbr-section-btn mt-3">
+										<a class="btn btn-primary display-7 animate__animated animate__delay-1s animate__fadeIn" href="{% url 'contact_us' %}" >Start now</a></div>
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div>
+                
+            </div>   
+                
+        </div>
+        
+        
+    </section>   
+</div> 
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% load static%}
+<!-- <section data-bs-version="5.1" class="menu menu2 cid-u2mP8Xf1eL" once="menu" id="menu02-1t"></section> -->
+<section data-bs-version="5.1" class="menu menu3 cid-u4wCqLJOW8" once="menu" id="menu03-1i">
+    
+    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+		<div class="container">
+			<div class="navbar-brand">
+				<span class="navbar-logo">
+				
+						<a class="navbar-brand" href="/">
+
+							<img src="{% static 'blogapp/images/version/market-logo.png'%}" alt="">
+						
+						
+
+					</a>
+				</span>
+				
+			</div>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<div class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+					<li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="{% url 'blog' %}">Blog</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link link text-white  display-4" href="{% url 'videos' %}">Videos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link link text-white  display-4" href="{% url 'about' %}">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="{% url 'services' %}" aria-expanded="false">Services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link link text-white display-4" href="{% url 'contact_us' %}">Contact Us</a>
+                    </li>
+				</ul>
+				<div class="icons-menu">
+					<a class="iconfont-wrapper" href="https://mobiri.se">
+						<span class="p-2 mbr-iconfont mobi-mbri-phone mobi-mbri"></span>
+					</a>
+					<a class="iconfont-wrapper" href="https://mobiri.se">
+						<span class="p-2 mbr-iconfont mobi-mbri-letter mobi-mbri"></span>
+					</a>
+					<a class="iconfont-wrapper" href="https://mobiri.se">
+						<span class="p-2 mbr-iconfont mobi-mbri-map-pin mobi-mbri"></span>
+					</a>
+					<a class="iconfont-wrapper" href="https://mobiri.se">
+						<span class="p-2 mbr-iconfont mobi-mbri-shopping-cart mobi-mbri"></span>
+					</a>
+				</div>
+				<div class="navbar-buttons mbr-section-btn">
+					<a class="btn btn-primary display-4" href="{% url 'contact_us' %}"> Start Now!</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+
+</section>

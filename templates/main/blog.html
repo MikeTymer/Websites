@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+
+{% block title %}Blog Home{% endblock title %}
+{% load static %}
+
+
+{% block content %}
+
+<section data-bs-version="5.1" class="col-sm-15 col-md-11 col-lg-11 article02 cid-u2uJiVQPbD" id="article02-1y" style="padding-top: 5%; padding-left: 10%;">
+
+
+          
+                <div class="row justify-content-center">
+                    <div class="col-12 content-head">
+                        <div class="mbr-section-head mb-5">
+                            <br>
+                            <br>
+                            <h5 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Blog</strong></h5>
+                        </div>
+                    </div>
+                </div>
+            <div class="container-fluid ">
+            
+                            <div class="media-container-row justify-content-center">
+                                <div class="col-12 content-head">
+                                    <div class="mbr-section-head mb-5">
+                                    </div>
+                                </div>
+                            </div>
+                                
+
+                        <div class="row">
+                            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                                <div class="page-wrapper">
+                                {% for data in blog_entries %}
+                                <div class="blog-custom-build">
+                                    <div class="blog-box wow fadeIn card mb-4">
+                                        <div class="post-media">
+                                            <a href="{% url 'blog_detail' data.slug %}" title="">
+                                                <img src="{{data.feature_image.url}}" alt="" class="img-fluid">
+                                                <div class="hovereffect">
+                                                    <span></span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="blog-meta big-meta text-center Responsive p-1">
+                                            <small><a title=""><i class="fa fa-eye"></i> {{data.views}}</a></small>
+                                            <small class="text-muted "><a href="/" title="">by {{ data.author.first_name }} {{ data.author.last_name }}</a></small>
+                                            <small class="text-muted"><a  title="">{{data.post_date}}</a></small>
+                                            <div class="post-sharing">
+                                                <ul class="list-inline">
+                                                    <li>
+                                                        <a href="https://www.facebook.com/sharer/sharer.php?u=URL to Your Blog" class="fb-button btn btn-primary" target="_blank">
+                                                            <i class="fa fa-facebook"></i>
+                                                            <span class="down-mobile">Share on Facebook</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://twitter.com/intent/tweet?url=URL to Your Blog&text=Your Tweet Text" class="tw-button btn btn-primary" target="_blank">
+                                                            <i class="fa fa-twitter"></i>
+                                                            <span class="down-mobile">Tweet on Twitter</span>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://plus.google.com/share?url=URL to Your Blog" class="gp-button btn btn-primary" target="_blank">
+                                                            <i class="fa fa-google-plus"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <h4 class="card-title text-white"><a href="{% url 'blog_detail' data.slug %}" title=""><strong>{{data.name}}</strong></a></h4>
+                                            <p class="card-text text-white"><a href="{% url 'blog_detail' data.slug %}" title="">{{data.description}}</a></p>
+                                            
+                                            <div class="tag-cloud-single">
+                                                <span>Services</span>
+                                                {% for data in category_entries %}
+                                                <small ><strong></strong><a href="{% url 'category_detail' data.slug %}"title="">{{data.name}}</a></strong></small>
+                                               {% endfor %}
+                                            </div><!-- end meta -->
+                
+                                           
+                                        </div>
+                                        <a href="{% url 'blog_detail' data.slug %}" class="btn btn-primary"><i class="fa-brands fa-readme"></i> Read More</a>
+
+                                        <hr class="invis1">
+            
+                                    </div>
+
+                                    
+                                </div>
+                                {% endfor %}
+                            </div>
+
+                            <hr class="invis"></hr>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h4 class="text-center col-md-15">Page {{blog_entries.number}}/{{blog_entries.paginator.num_pages}}</h4>
+                                    <nav aria-label="Page navigation ">
+                                        <ul class="pagination justify-content-center">
+                                            {% if blog_entries.has_previous %}
+                                               
+                                                <li class="page-item">
+                                                    <a class="btn btn-primary page-link" href="?page={{ blog_entries.previous_page_number }}">Previous</a>
+                                                </li>
+                                            {% endif %}
+
+                                            {% for num_page in blog_entries.paginator.page_range %}
+                                                <li class="page-item {% if blog_entries.number == num_page %}active{% endif %}">
+                                                    <a class="btn btn-primary page-link" href="?page={{ num_page }}">{{ num_page }}</a>
+                                                </li>
+                                            {% endfor %}
+
+                                            <li class="page-item">
+                                                {% if blog_entries.has_next %}
+                                                    <a class="btn btn-primary page-link" href="?page={{ blog_entries.next_page_number }}">Next</a>
+                                                {% endif %}
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+
+                       {% include 'main/sidebar.html' %}
+                   
+                </div>
+         
+          
+            
+       
+
+            </div>
+        <!-- end wrapper -->
+</section>
+
+{% endblock content %}

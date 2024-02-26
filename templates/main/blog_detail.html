@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load static %}
+{% block title %}{{blog.name}}{% endblock title %}
+
+{% block content %}
+
+<section data-bs-version="5.1" class="start article02-1j cid-u2uJiVQPbD" id="article02-1y" style="padding-top: 5%; padding-left: 10%;">
+        <div class="container-fluid">
+        <div class="media-container-row ">
+            <div class="col-12 content-head">
+                <div class="mbr-section-head mb-5">
+                    <br>
+                    <br>
+                    <h5 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>{{ blog.name }}</strong></h5>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+        <div class="media-container-row">
+            <div class="row">
+                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                    
+                    <div class="page-wrapper">
+                        <div class="blog-title-area">
+                            <ol class="breadcrumb hidden-xs-down">
+                                <li class="breadcrumb-item text-black"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item text-black"><a href="#">Blog</a></li>
+                                <li class="breadcrumb-item active text-black">{{ blog.name }}</li>
+                            </ol>
+
+                            <span class="color-yellow"><a href="category" title="">{{ blog.category }}</a></span>
+
+                            <h3>{{ blog.name }}</h3>
+
+                            <div class="blog-meta big-meta">
+                                <small><a href="marketing-single.html" title="">{{ blog.post_date }}</a></small>
+                                <small><a href="blog-author.html" title="">by {{ blog.author.first_name }} {{ blog.author.last_name }}</a></small>
+                                <small><a href="#" title=""><i class="fa fa-eye"></i> {{blog.views}}</a></small>
+                            </div><!-- end meta -->
+
+                            <div class="post-sharing">
+                                <ul class="list-inline">
+                                    <li><a href="#" class="fb-button btn btn-primary"><i class="fa fa-facebook"></i> <span class="down-mobile">Share on Facebook</span></a></li>
+                                    <li><a href="#" class="tw-button btn btn-primary"><i class="fa fa-twitter"></i> <span class="down-mobile">Tweet on Twitter</span></a></li>
+                                    <li><a href="#" class="gp-button btn btn-primary"><i class="fa fa-google-plus"></i></a></li>
+                                </ul>
+                            </div><!-- end post-sharing -->
+                        </div><!-- end title -->
+
+                        <div class="post-media">
+
+                            <img src=" {{blog.feature_image.url}}"  alt="" class="img-fluid">
+
+                            <div class="hovereffect">
+                                <span></span>
+                            </div>
+
+                        </div><!-- end media -->
+
+                        <div class="blog-content">  
+                            <div class="pp">
+                                <p class="mbr-text mbr-fonts-style display-7 text-black">{{ blog.mini_description }} </p>
+
+                                <h3><strong>Title: {{ blog.name }}</strong></h3>
+
+                                <p class="mbr-text mbr-fonts-style display-7 text-black">{{ blog.description }}</p>
+
+                            </div><!-- end pp -->
+                            
+                        </div><!-- end content -->
+
+                        <div class="blog-title-area">
+                            <div class="tag-cloud-single">
+                                <span>Services</span>
+                                {% for data in category_entries %}
+                                <small ><strong></strong><a href="{% url 'category_detail' data.slug %}"title="">{{data.name}}</a></strong></small>
+                               {% endfor %}
+                            </div><!-- end meta -->
+
+                           
+                        </div><!-- end title -->
+
+                        
+
+                     
+
+                        {% include 'main/author.html' %}
+
+                        <hr class="invis1">
+
+                        <div class="custombox clearfix">
+                            <h4 class="small-title">Comments ({{all_comments.count}})</h4>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    {% for comment in all_comments %}
+                                    <div class="comments-list">
+                                        <div class="media">
+                                            <a class="media-left" href="#">
+                                                <img src="{% static 'upload/author.jpg ' %}" alt="" class="rounded-circle">
+                                            </a>
+                                            <div class="media-body">
+                                                <h4 class="media-heading user_name">{{ comment.author }}<small>5 days ago</small></h4>
+                                                <p class="mbr-text mbr-fonts-style display-7 text-black">{{ comment.description }}</p>
+                                                <a href="#" class="btn btn-primary btn-sm">Reply</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div><!-- end col -->
+                            </div><!-- end row -->
+                        </div><!-- end custom-box -->
+
+
+                        
+                        <hr class="invis1">
+
+                        <div class="custombox clearfix">
+                            <h4 class="small-title">Leave a Reply</h4>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                   
+                                    <form method="post">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="blog" value="{{ blog.id }}">  <!-- Use the ID instead of the slug -->
+                                        {{ form.description }}
+                                        <button type="submit" class="btn btn-outline-primary">Comment</button>
+                                    </form>
+                                    
+                                 
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div><!-- end page-wrapper -->
+                </div><!-- end col -->
+
+                {% include 'main/sidebar.html' %}
+                   
+
+            </div><!-- end row -->
+        </div><!-- end container -->
+        </div>
+    </div>
+    </section>
+
+
+
+    
+<!-- end wrapper -->
+
+
+<script>
+    var name = "{{ user.id }}"
+    var blog = "{{ blog.id }}"
+    document.getElementById("author").value = name;
+    document.getElementById("blog").value = blog;
+</script>
+{% endblock content %}
+
+
+<!--
+<div class="container">
+   
+    <div class="row">
+        <div class="col-md-8">
+            <h2>{{ blog.name }}</h2>
+            <span>Author: {{blog.author}}</span>
+            <div>
+                <small>{{ blog.post_date }}</small>
+            </div>
+
+            <div>
+                {% if user.is_authenticated %}
+                    {% if user.id == blog.author.id %}
+                    <a class="btn btn-sm btn-info" href="{% url 'UpdateBlogView' blog.id %}"><i class="fa-solid fa-pen-to-square"></i> Edit Blog</a>
+                    <a class="btn btn-sm btn-danger" href="{% url 'DeleteBlogView' blog.id %}"> <i class="fa-solid fa-trash"></i> Delete Blog</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+
+            <div>
+                <p class="mbr-text mbr-fonts-style display-7 text-black">{{blog.description|safe}}</p>
+            </div>
+
+            <div class="col">
+                <h3>Comments ({{all_comments.count}})</h3>
+
+                {% for comment in all_comments %}
+                    <div class="card mb-2">
+                        <div class="card-header">
+                            {{ comment.author }} <br>
+                            {{ comment.comment_date| timesince }} ago
+                        </div>
+
+                        <div class="card-body">
+                            <blockquote class="blockquote mt-2">
+                                <p class="mbr-text mbr-fonts-style display-7 text-black">{{ comment.description }}</p>
+                            </blockquote>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="col">
+                {% if user.is_authenticated %}
+                    {% if blog.author.id == user.id %}
+                        <h3 class="text-center text-warning">You are not allowed to post comment on your own blog</h3>
+                    {% else %}
+                    <h3>Write your comment...</h3>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{form.as_p}}
+                        <button type="submit" class="btn btn-outline-primary">Comment</button>
+                    </form>
+                    {% endif %}
+                {% else %}
+                    <h2 class="text-center text-danger">Please Login to comment on this post <a href="{% url 'login' %}">Login</a></h2>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <ul class="list-group">
+                {% for blogs in all_blogs %}
+                    <li class="list-group-item">
+                        <a href="{% url 'blog_detail' blogs.slug %}" class="text-decoration-none"><i class="fa-solid fa-arrow-right"></i> {{blogs.name}}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+-->
+

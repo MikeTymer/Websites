@@ -1,0 +1,165 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+
+{% load static %}
+
+<!DOCTYPE html>
+<html class="hamburger">
+<head>
+
+    <!--
+
+        advert link
+    -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9439344424124933"
+     crossorigin="anonymous"></script>
+
+   
+     <!--
+
+       End advert link
+    -->
+ 
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+  <meta name="generator" content="Mobirise v5.9.13, mobirise.com">
+  <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+  <meta name="description" content="A spiritual healer's website and blog to help people arround the world">
+  
+  
+    <!-- Open Graph meta tags for Facebook -->
+  
+
+  
+  <title>Blogapp</title>
+  
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-grid.min.css' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap-reboot.min.css' %}">
+  <link rel="stylesheet" href="{% static 'animatecss/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'dropdown/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'socicon/css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'theme/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'web/assets/mobirise-icons2/mobirise2.css' %}">
+
+
+<link rel="preload" as="style" href="{% static 'mobirise/css/mbr-additional.css' %} "><link rel="stylesheet" href="{% static 'mobirise/css/mbr-additional.css' %}" type="text/css">
+
+
+    <!-- FontAwesome Icons core CSS -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'style.css' %}" rel="stylesheet">
+
+
+   
+    <!-- Colors for this template -->
+    <link href="{% static 'css/colors.css' %}" rel="stylesheet">
+
+<style class="css">
+
+
+.list-group-item:hover {
+    background-color: rgb(2, 51, 22); /* Change to the desired hover background color */
+    color: black; /* Change to the desired hover text color */
+}
+
+/*  links sidebar CSS  */
+._social-links {
+	position: fixed;
+	right: 0;
+	top: 50%;
+	transform: translatey(-50%);
+	padding: 1em 0.5em 1em 1em;
+	background: #45af13;
+	border-radius: 30em 0 0 49.5em;
+	box-shadow: -4px 0px 0px rgb(14, 13, 13);
+	transition: all 300ms ease;
+}
+
+._social-links:hover {
+	box-shadow: -8px 0px 20px rgb(11, 255, 3);
+	padding: 1em;
+}
+
+._links-list {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+._social-link a {
+	color: #04a71a;
+	font-size: 1.5rem;
+	transition: all 200ms ease;
+}
+._social-link a:visited {
+	color: #111;
+}
+
+._social-link a:hover {
+	color: rgb(19, 228, 82);
+	font-size: 1.75rem;
+	padding: 1em;
+
+}
+
+/* //////////////////////////// */
+
+</style>
+    
+  
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  
+    
+</head>
+<header>
+    {% include "main/navbar.html" %}
+</header>
+<body>
+   
+	
+    {% block content %}
+
+
+    
+
+    {% endblock %}
+
+    
+  
+    <div id="scrollToTop" class="scrollToTop mbr-arrow-up">
+        <a >
+            <i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i>
+        </a>
+    </div>
+
+    <input name="animation" type="hidden">
+
+   
+        
+  </body>
+  <!-- Reference CodePen -->
+<!-- https://codepen.io/bosworthco/pen/RjBvgw -->
+<!-- -------------------------- -->
+
+
+
+  {% include "main/footer.html" %}
+  {% include "main/bottom-nav.html" %}
+<script src="{% static 'smoothscroll/smooth-scroll.js' %}"></script>  
+<script src="{% static 'ytplayer/index.js' %}"></script>  
+<script src="{% static 'dropdown/js/navbar-dropdown.js' %}"></script>  
+<script src="{% static 'theme/js/script.js' %}"></script>  
+
+
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>  
+
+</html>
