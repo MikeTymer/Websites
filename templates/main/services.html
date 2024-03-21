@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Categories{% endblock title %}
+{% block title %}Services{% endblock title %}
 
 {% block content %}
 
@@ -17,22 +17,26 @@
         </div>
         <div class="row" id="features-carousel">
             {% for data in category_entries %}
-                <div class="item features-image col-12 col-md-6 col-lg-4">
-                    <div class="item-wrapper">
+                <div class="item features-image col-12 col-md-6 col-lg-4" style="border-radius: 15%;">
+                    <div class="item-wrapper bg-dark">
                         <a href="{% url 'category_detail' data.slug %}">
                         <div class="item-img">
-                            <img src="{{data.featured_image.url}}" alt="Mobirise Website Builder">
+                            <img src="{{data.featured_image.url}}" alt="Mobirise Website Builder" class="img-fluid">
+                           
+                            
                         </div>
+                        
+                    
                             </a>
                         <div class="item-content">
                         <a href="{% url 'category_detail' data.slug %}">
                             <h2>
-                                   <strong>{{data.name}}</strong>
+                                   <strong class=" text-white">{{data.name}}</strong>
                             </h2>
 
                         </a>
                         <a href="{% url 'category_detail' data.slug %}">
-                            <p class="mbr-text mbr-fonts-style display-7 text-black">
+                            <p class="mbr-text mbr-fonts-style display-7 text-white">
                                 {{ data.description}}
                             </p>
                             </a>

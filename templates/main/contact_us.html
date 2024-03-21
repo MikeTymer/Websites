@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% block title %}Contact_us{% endblock title %}
 
 {% block content %}
-<section data-bs-version="5.1" class="features4 cid-tMlEXTHLbS" id="features04-w" style="padding-top: 10%;">
+<section data-bs-version="5.1" class="features4 cid-tMlEXTHLbS bg-dark" id="features04-w" style="padding-top: 10%;">
     <div id="wrapper">
         <div class="container-fluid m-12">
             <div class="page-title db">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-sm-8 col-xs-4">
-                            <h2>Contact <small class="hidden-xs-down hidden-sm-down">Get in touch with us now and get all your issues solved by DR zameel </small></h2>
+                            <h2>Contact <small class="hidden-xs-down hidden-sm-down">Get in touch with us now and get all your issues solved by DR Zilaba </small></h2>
                         </div><!-- end col -->
                         <div class="col-lg-4 col-md-4 col-sm-12 hidden-xs-down hidden-sm-down">
                             <ol class="breadcrumb">
@@ -32,7 +33,7 @@
                                 <div id="" class="widget">
                                     <div class="banner-spot clearfix">
                                         <div class="banner-img">
-                                            <img src="{% static 'images/baba.png' %}" alt="" class="img-fluid">
+                                            <img src="{% static 'blogapp/images/version/logo.png' %}" alt="" class="img-fluid">
                                         </div><!-- end banner-img -->
                                     </div><!-- end banner -->
                                 </div><!-- end widget -->
@@ -63,7 +64,7 @@
                                         <div class="col-md-12 col-lg-8 item-wrapper">
                                             <p class="mbr-text mbr-fonts-style display-7 text-black">
                                             Connect with us on <a href="http://mobiri.se" class="text-primary">WhatsApp</a> and <a href="http://mobiri.se" class="text-primary">Facebook</a>
-                                            <br>+254110575798 <br>contact@yourbusiness.com <br>Plot24 Buganda Street, Kampala, Uganda<a href="http://mobiri.se" class="text-primary"><br></a>
+                                            <br>+254110575798 <br>contact@yourbusiness.com <br>Plot24 Buganda Street, Kampala, Uganda
                                           </p>
                                         </div>
                                     </div>
@@ -71,9 +72,9 @@
 
                                 <hr class="invis">
 
-                                <div class="row text-black">
+                                <div class="row bg-dark">
                                     <div class="col-lg-12">
-                                        <form method="post" >
+                                        <form method="post" class="form">
                                             {% csrf_token %}
                                             {{ form.media }}
                                             {{form.as_p}}

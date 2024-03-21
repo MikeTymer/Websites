@@ -589,7 +589,7 @@ div.tab button:hover {
 
 .footer {
     padding: 4rem 0 4rem;
-    background: url(images/footer.png) repeat-x center bottom #edeff2;
+    background: url(blogapp/images/footer.png) repeat-x center bottom #edeff2;
 }
 
 .footer.wb {
@@ -1240,7 +1240,7 @@ hr.invis3 {
     position: absolute;
     height: 90px;
     display: block;
-    content: url(images/hover.png);
+    content: url(blogapp/images/hover.png);
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     -ms-transition: all .3s ease-in-out;

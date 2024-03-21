@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load humanize %}
 {% load static %}
-{% block title %}{{blog.name}}{% endblock title %}
+{% block title %}{{blog.slug}}{% endblock title %}
 
 {% block content %}
 
@@ -29,14 +29,14 @@
                                 <li class="breadcrumb-item active text-black">{{ blog.name }}</li>
                             </ol>
 
-                            <span class="color-yellow"><a href="category" title="">{{ blog.category }}</a></span>
+                            <span class="color-yellow"><a href="{% url 'services' %}" title="">{{ blog.category }}</a></span>
 
                             <h3>{{ blog.name }}</h3>
 
                             <div class="blog-meta big-meta">
-                                <small><a href="marketing-single.html" title="">{{ blog.post_date }}</a></small>
-                                <small><a href="blog-author.html" title="">by {{ blog.author.first_name }} {{ blog.author.last_name }}</a></small>
-                                <small><a href="#" title=""><i class="fa fa-eye"></i> {{blog.views}}</a></small>
+                                <small>{{ blog.post_date }}</small>
+                                <small><a href="/" title="">by {{ blog.author.first_name }} {{ blog.author.last_name }}</a></small>
+                                <small><i class="fa fa-eye"></i> {{blog.views}}</small>
                             </div><!-- end meta -->
 
                             <div class="post-sharing">

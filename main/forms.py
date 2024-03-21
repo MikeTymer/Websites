@@ -7,7 +7,7 @@ class ContactForm(forms.ModelForm):
         model = Contact
         fields = "__all__"
         # fields = ("first_name", "last_name", "e_mail")
-        # exclude = ("first_name",)
+        exclude = ('contact_date',)
 
         widgets = {
             "first_name": forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your first name'}),
